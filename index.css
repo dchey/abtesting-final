@@ -1,1 +1,55 @@
 /* Put your style information here! */
+body {
+    margin: auto;
+    background-color: lightcyan;
+}
+
+nav {
+    color: black;
+    font-size: 16px;
+    background-color: lightcyan;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    border-bottom: 1px solid darkblue;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: darkcyan;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: calc(0.5rem + 0.7vw);
+}
+
+nav a:hover {
+    background-color: darkcyan;
+    color: lightblue;
+}
+
+h1 {
+    padding-top: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: calc(2.0rem + 2.3vw);
+}
+
+h2 {
+    font-size: calc(1.1rem + 1.4vw);
+}
+
+
+.part {
+    color: black;
+    font-size: 18px;
+    padding: 20px;
+}
+
+.part:hover {
+	border: 1px solid #777;
+  }

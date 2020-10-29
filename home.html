@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>INSERT TITLE HERE!</title>
+    <title>A/B Testing</title>
     <link rel="stylesheet" href="index.css">
     <!-- TODO: add additional links here! e.g. fonts, icons, more stylesheets, etc. -->
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -10,5 +10,104 @@
 
   <body>
     <!-- TODO: put your HTML code here! -->
+    <nav>
+      <a href="#" class="active"> Home </a>
+      <a href="#objective"> Objective </a>
+      <a href="#website"> Making and Deploying Websites </a>
+      <a href="#hypothesis"> Hypothesis </a>
+      <a href="#data"> Collecting Data </a>
+      <a href="#conclusion"> Conclusions and Takeaways </a>
+    </nav>
+    <h1> A/B Testing </h1>
+
+    <a id="objective"></a>
+    <div class="part">
+      <h2> Objective </h2>
+      Perform an A/B test and statistical analysis on two websites to gain insights into their designs.
+
+    </div>
+
+    <a id="website"></a>
+    <div class="part">
+      <h2> Making and Deploying Websites </h2>
+      <p> In studio 5, we modified online cactus shopping websites into <a href="https://secret-mountain-95595.herokuapp.com
+      " target="_blank"> two versions</a>: </p>
+      <li> A version: Uses more than one background and text colors. </li>
+      <li> B version: Has bold text for cactus prices. </li>
+    </div>
+
+    <a id="hypothesis"></a>
+    <div class="part">
+      <h2> Creating Hypothesis for Statistical Tests </h2>
+      <p> First, we have to create null and alternative hypotheses for two metrics: </p>
+      Time to completion:
+      <li>Null hypothesis: Version A has faster time of completion because having more than one color helps showing the differences better at a glance. </li>
+      <li>Alternative hypothesis: Version B has faster time of completion than version A. </li>
+      <li>Reasonings behind alternative hypothesis: Part of the task is to make sure that the cart is over $150. Since version B highlights the prices with bold task, this could be more affective than using more than one colors. </li>
+
+
+      <br>
+      Return rate:
+      <li>Null hypothesis: Version A has more return rate than version B because different background colors help show different parts of the website. </li>
+      <li>Alternative hypothesis: Version B has more return rate than version A.</li>
+      <li>Reasonings behind alternative hypothesis: Version A uses only one hue(green) with different saturation and brightness, which might not help people see things more clearly, and background colors of checkout buttons are same for both versions. </li>
+      
+    </div>
+
+    <a id="data"></a>
+    <div class="part">
+      <h2> Collecting Data and Applying Scripts </h2>
+      <h3> Data Collection Process: </h3>
+      I sent my link to my peer classmates during studio hours for data collection. 
+      They were randomly given one of the two versions, and had to fill at least $150 of cacti/succulents, go to the checkout page, and come back to the main page.
+
+      <h3> Extracting and Transitioning Data: </h3>
+      <li>I followed step 5 from <a href="https://github.com/laurawilsonri/1300ABTesting" target="_blank">studio 5</a> readme to extract and filter data from my website.</li>
+      <li>Then I turned the text file into csv file without any scientific notations. </li>
+      <img src="img/data.png" alt="data" style="width:70%; height:auto">
+      
+
+      <h3> Cleaning and Running Data: </h3>
+      <li>In the csv file, I hand computed time to completion and counted return rate for both versions. </li>
+      <li>Then I passed these values to python file from studio 6 to compute p values, t score (time for completion), and chi^2 value (return rate).  </li>
+      <img src="img/time.png" alt="time to completion" style="width:20%; height:auto">
+      <img src="img/return.png" alt="return rate" style="width:40%; height:auto">
+
+
+    </div>
+
+    <a id="conclusion"></a>
+    <div class="part">
+      <h2> Conclusions and Takeaways </h2>
+      <h3> Conclusions from Calculations</h3>
+      Time for completion:
+      <li>t-score: 0.996312262747</li>
+      <li>p-value: 0.168641303251</li>
+
+      <br>
+      Return rate:
+      <li>chi^2 value: 0.405910609858</li>
+      <li>p-value: 0.524052450153</li>
+
+      <br>
+      Conclusions:
+      <li>Since p-values are greater than 0.05 for both time for completion and return rate, we fail to reject null hypothesis.</li>
+      <li>The high p-values for both metrics tell that results are not statistically significant, which tells that the tests did not show any significant difference between A and B. </li>
+
+
+      <h3> Results and Takeaways</h3>
+      <p>Below is my infographic that describes the results and conclusions from each statistical test:</p>
+      <img src="img/infographic.png" alt="infographic" style="width:40%; height:auto">
+
+
+      <p>Takeaways:</p>
+      <li> The results show that changing or adding different colors, fonts, or styles does not significantly make the website more effective. </li>
+      <li> I collected less than 40 data for testing websites, which was not enough to get accurate results. Having more data could have made the results more accurate.</li>
+      <li> Types of data gathered should be important too; one of the datas for time of completion was a complete outlier, which tells that there is a high chance that it is not a good one for getting insight into the websites. </li>
+      <li> Conclusions of more complex designs (ex. website has checkout button located top right, user can see the total price after adding/removing stuff to the cart, etc.) could be more complex because you have to figure out how each design principle affects user experience. </li>
+
+
+    </div>
+
   </body>
 </html>
